@@ -10,7 +10,9 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 
 const App = () => {
   const [mode, setMode] = useState('light');
-  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)', {
+    noSsr: true,
+  });
 
   useEffect(() => {
     if (prefersDarkMode) {
